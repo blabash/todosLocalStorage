@@ -11,15 +11,17 @@ class TodoForm extends React.Component {
         }
 
         this.onChange = this.onChange.bind(this)
-        this.onSubmit = this.onSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    onSubmit(e) {
+    handleSubmit(e) {
         e.preventDefault()
-        let newTodo = this.state
-        newTodo.id = new Date().getTime() //get a unique ID, should put this in a util folder
+        const newTodo = Object.assign({}, this.state, { id: new Date().getTime() })
         this.props.onSubmit(newTodo)
-        console.log(newTodo)
+        this.setState({
+            title: '',
+            body: '',
+        })
     }
 
     onChange(e) {
@@ -30,7 +32,7 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.handleSubmit}>
                 <input type="text" 
                         name="title" 
                         value={this.state.title}

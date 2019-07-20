@@ -1,5 +1,6 @@
 import { RECEIVE_TODOS,
-         RECEIVE_TODO } from '../actions/todo_actions'
+         RECEIVE_TODO,
+         REMOVE_TODO } from '../actions/todo_actions'
 
 const initialState = { //for store testing
     1 : {
@@ -29,6 +30,10 @@ const todosReducer = (state = initialState, action) => {
         case RECEIVE_TODO:
             let newTodo = {[action.todo.id]: action.todo}
             newState = {...state, ...newTodo}
+            return newState
+        case REMOVE_TODO:
+            newState = {...state}
+            delete newState[action.todo.id]
             return newState
         default:
             return state;

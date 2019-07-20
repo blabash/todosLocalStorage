@@ -3,15 +3,18 @@ import TodoListItem from './todo_list_item'
 import TodoForm from './todo_form'
 
 function TodoList(props) {
-    let allTodos = props.todos
-    let allTodoTitles = allTodos.map(todo => {
-        return <TodoListItem key={todo.id} todo={todo} />
+    const { todos, receiveTodo, removeTodo } = props
+    const todoItems = todos.map(todo => {
+        return <TodoListItem 
+                    key={todo.id} 
+                    todo={todo}
+                    remove={removeTodo} />
     })
 
     return (
         <ul>
-            {allTodoTitles}
-            <TodoForm onSubmit={props.receiveTodo} />
+            {todoItems}
+            <TodoForm onSubmit={receiveTodo} />
         </ul>    
     )
 }
