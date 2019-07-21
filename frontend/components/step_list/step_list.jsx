@@ -1,5 +1,6 @@
 import React from 'react'
 import StepListItemContainer from "./step_list_item_container";
+import StepForm from './step_form'
 
 function StepList({ steps, todo_id, receiveStep }) {
     console.log(steps)
@@ -14,6 +15,7 @@ function StepList({ steps, todo_id, receiveStep }) {
             <ul>
                 { stepItems }
             </ul>
+            <StepForm todo_id={todo_id} receiveStep={receiveStep} />
         </div>
     )
 }

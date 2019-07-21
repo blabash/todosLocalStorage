@@ -2,10 +2,10 @@ export const allTodos = ({todos}) => {
     return Object.keys(todos).map(id => todos[id])
 }
 
-export const stepsByTodoId = ({ steps }, todoId) => {
+export const stepsByTodoId = ({ steps }, todo_id) => {
     let matchingSteps = []
     for(let key in steps) {
-        if (steps[key].todoId === todoId) {
+        if (steps[key].todo_id === todo_id) {
             matchingSteps.push(steps[key])
         }
     }

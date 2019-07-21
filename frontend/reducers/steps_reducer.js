@@ -5,21 +5,21 @@ import { RECEIVE_STEPS,
 const initialState = {
     1: {
         id: 1,
-        todoId: 1,
+        todo_id: 1,
         title: 'with soap',
         body: 'use the new stuff u just bought at the store',
         done: false
     },
     2: {
         id: 2,
-        todoId: 2,
+        todo_id: 2,
         title: 'with shampoo',
         body: 'dont forget the flea stuff',
         done: true
     },
     3: {
         id: 3,
-        todoId: 1,
+        todo_id: 1,
         title: 'wax too',
         body: '3 coats wax for the lambo',
         done: true
