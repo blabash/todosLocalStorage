@@ -2,7 +2,31 @@ import { RECEIVE_STEPS,
          RECEIVE_STEP,
          REMOVE_STEP } from "../actions/step_actions";
 
-const stepsReducer = (state = {}, action) => {
+const initialState = {
+    1: {
+        id: 1,
+        todoId: 1,
+        title: 'with soap',
+        body: 'use the new stuff u just bought at the store',
+        done: false
+    },
+    2: {
+        id: 2,
+        todoId: 2,
+        title: 'with shampoo',
+        body: 'dont forget the flea stuff',
+        done: true
+    },
+    3: {
+        id: 3,
+        todoId: 1,
+        title: 'wax too',
+        body: '3 coats wax for the lambo',
+        done: true
+    }//for store testing
+}
+
+const stepsReducer = (state = initialState, action) => {
     Object.freeze(state)
     let newState = {}
 
