@@ -1,5 +1,5 @@
 import React from 'react'
-import TodoListContainer from '../components/todos/todo_list_container'
+import TodoListContainer from './todos/todo_list_container'
 
 function App() {
     return (
